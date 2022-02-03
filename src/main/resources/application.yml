@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      username: root
+      password: pwd
+      database: admin
+      host: localhost
+      port: 27017
+
+logging:
+  pattern:
+    level: "[%X{MDC_KEY}] %5p"
+
+user-order:
+  order-search-service:
+    host: http://localhost
+    port: 8081
+    orders-by-phone-endpoint: /orderSearchService/order/phone
+  product-info-service:
+    host: http://localhost
+    port: 8082
+    products-by-code-endpoint: /productInfoService/product/names
+    request-timeout-in-seconds: 5
